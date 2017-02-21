@@ -4,11 +4,7 @@ var express = require('express');
 var _ = require('lodash');
 var app = express();
 
-
-// check if environment variables are set
-// var env = {};
- var   env = process.env;
-
+var   env = process.env;
 
 app.get('/', function (req, res) {
     res.send('Welcome to PiCAST 3! In the URL, type what you want to do...');
@@ -17,7 +13,7 @@ app.get('/', function (req, res) {
 app.get('/yt-stream/:url', function (req, res) {
     res.send('Streaming YouTube Video...');
     console.log('Playing: ' + "livestreamer --player=mplayer https://www.youtube.com/watch?v=" + req.params.url + " best");
-    exec("livestreamer --player=mplayer https://www.youtube.com/watch?v=" + req.params.url + " best", {env: env},
+    exec("./play-yt-stream.sh " + req.params.url, {env: env},
         function(error, stdout, stderr){
         console.log(error, stdout, stderr)
     });
