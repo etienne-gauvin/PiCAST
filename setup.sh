@@ -46,9 +46,6 @@ sudo npm install forever-monitor -g
 
 # GET PICAST NEEDED FILES...
 cd ~
-echo "Making PiCAST Folder..."
-mkdir PiCAST
-echo "Entering PiCAST Folder..."
 cd PiCAST
 
 # INSTALL PICAST DAEMON
