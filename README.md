@@ -4,7 +4,7 @@ PiCAST turns your $35 Raspberry Pi in to a Chromecast and beyond like Device.
 <b>GET/INSTALL PiCAST</b>
 
 1). Clone the repo into the pi: 
-`chmod +x setup.sh`
+`chmod +x setup.sh && ./setup.sh`
 
 2). After setup is done? Make sure it's running, in a browser visit: http://ip-to-your-Pi:3000.
 
