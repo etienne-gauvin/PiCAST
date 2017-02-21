@@ -22,6 +22,13 @@ app.get('/yt-stream/:url', function (req, res) {
         console.log(error, stdout, stderr)
     });
 });
+app.get('/stop', function (req, res) {
+    res.send('Stopping Stream...');
+    exec("kill $(ps -A -o pid -o cmd | grep -m 1 \"livestreamer\" | cut -d' ' -f1)", {env: env},
+        function(error, stdout, stderr){
+        console.log(error, stdout, stderr)
+    });
+});
 
 // Setup PiCAST Server
 var srv = app.listen(3000, function () {
