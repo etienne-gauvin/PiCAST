@@ -20,7 +20,7 @@ app.get('/yt-stream/:url', function (req, res) {
 });
 app.get('/stop', function (req, res) {
     res.send('Stopping Stream...');
-    exec("kill $(ps -A -o pid -o cmd | grep -m 1 \"livestreamer\" | cut -d' ' -f1)", {env: env},
+    exec("./stop-stream.sh", {env: env},
         function(error, stdout, stderr){
         console.log(error, stdout, stderr)
     });
