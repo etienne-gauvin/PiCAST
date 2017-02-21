@@ -12,12 +12,19 @@ app.get('/', function (req, res) {
 
 app.get('/yt-stream/:url', function (req, res) {
     res.send('Streaming YouTube Video...');
-    console.log('Playing: ' + "livestreamer --player=mplayer https://www.youtube.com/watch?v=" + req.params.url + " best");
     exec("./play-yt-stream.sh " + req.params.url, {env: env},
         function(error, stdout, stderr){
         console.log(error, stdout, stderr)
     });
 });
+app.get('/tw-stream/:url', function (req, res) {
+    res.send('Streaming Twitch Video...');
+    exec("./play-tw-stream.sh " + req.params.url, {env: env},
+        function(error, stdout, stderr){
+        console.log(error, stdout, stderr)
+    });
+});
+
 app.get('/stop', function (req, res) {
     res.send('Stopping Stream...');
     exec("./stop-stream.sh", {env: env},
