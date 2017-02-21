@@ -21,7 +21,7 @@ sleep 3
 
 # H264 Process...
 cd /usr/src
-sudo git clone git://git.videolan.org/x264
+sudo -E git clone https://git.videolan.org/git/x264.git
 cd x264
 sudo ./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-opencl
 sudo make
@@ -34,7 +34,7 @@ sleep 2
 
 # Process for FFMPEG...
 cd /usr/src # We could have done cd.. but we're taking NO CHANCES...
-sudo git clone git://source.ffmpeg.org/ffmpeg.git
+sudo -E git clone https://git.videolan.org/git/ffmpeg.git
 cd ffmpeg
 sudo ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfree
 sudo make
