@@ -51,14 +51,6 @@ mkdir PiCAST
 echo "Entering PiCAST Folder..."
 cd PiCAST
 
-echo "Getting PiCAST Server file..."
-sleep 1
-wget https://raw.githubusercontent.com/lanceseidman/PiCAST/master/picast.js
-echo "Getting Start/Stop Server files..."
-sleep 1
-wget https://raw.githubusercontent.com/lanceseidman/PiCAST/master/picast_start.sh
-wget https://raw.githubusercontent.com/lanceseidman/PiCAST/master/picast_stop.sh
-
 # INSTALL PICAST DAEMON
 read -p "Do you want to start PiCAST automatically on system boot? " -n 1 -r
 echo    # (optional) move to a new line
@@ -67,7 +59,6 @@ then
   cd /etc/init.d
   echo "Getting PiCAST Daemon file..."
   sleep 1
-  wget https://raw.githubusercontent.com/lanceseidman/PiCAST/master/picast_daemon
   mv picast_daemon picast
   sudo chown root:root picast
   sudo chmod +x picast
