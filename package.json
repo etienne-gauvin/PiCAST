@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://www.github.com/lanceseidman/PiCAST"
+    "url": "http://www.github.com/irfanhabib/PiCAST"
   },
   "keywords": [
     "picast",
@@ -16,10 +16,11 @@
     "raspberry pi",
     "raspi"
   ],
-  "author": "Lance Seidman",
+  "author": "Irfan Habib",
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.3",
+    "lodash": "^4.17.4",
     "sys": "0.0.1"
   }
 }
